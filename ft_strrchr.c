@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (*s++)
 	{
 		if (*s == c)
-			ret = (void)s;
+			ret = (char*)s;
 	}
 	return (ret);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bperraud <bperraud@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,12 +11,36 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*strdup(const char *s)
+int		ft_is_separator(const char c, const char *charset)
 {
-	char *dest;
+	while (*charset)
+		if (c == *charset++)
+			return (1);
+	return (0);
+}
 
-	dest = malloc(((ft_strlen(s)) + 1)  * sizeof(char));
-	if (!dest)
+char *ft_strtrim(char const *s1, char const *set)
+{
+	size_t size;
+	const char	*start;
+	const char	*end;
+	char		*dst;
+
+	end = s1 + ft_strlen(s1) - 1;
+	size = 0;
+	start = s1;
+	while (*start && ft_is_separator(*start, set))
+	{
+		start++;
+		size += 1;
+	}
+	if (ft_strlen(s1) - size == 0)
+		return ("");
+	while (ft_is_separator(*end--, set))
+			size += 1;
+	dst = malloc((ft_strlen(s1) - size) * sizeof (char));
+	if (!dst)
 		return (NULL);
-	return (ft_strcpy(dest, s));
+	ft_strncpy(dst, start, ft_strlen(s1) - size);
+	return (dst);
 }

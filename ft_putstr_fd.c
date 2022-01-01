@@ -9,7 +9,10 @@
 /*   Updated: 2021/12/18 14:42:59 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 void ft_putstr_fd(char *s, int fd)
 {
-
+	while (*s)
+		write(fd, s++, 1);
 }

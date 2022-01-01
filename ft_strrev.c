@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bperraud <bperraud@42.fr>                  +#+  +:+       +#+        */
+/*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 11:13:52 by bperraud          #+#    #+#             */
-/*   Updated: 2021/12/18 14:42:59 by bperraud         ###   ########.fr       */
+/*   Created: 2021/11/17 02:42:51 by bperraud          #+#    #+#             */
+/*   Updated: 2021/11/17 11:32:15 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+char	*ft_strrev(char *str)
 {
-	while (*s)
-		write(fd, s++, 1);
-	write(fd, "\n", 1);
+	size_t	i;
+	size_t	j;
+	char	tmp;
+
+	i = 0;
+	j = ft_strlen(str);
+	while (j > i)
+	{
+		j--;
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
+		i++;
+	}
+	return str;
 }

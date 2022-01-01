@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 char			*ft_strcpy(char *dest, const char *src);
 char			*ft_strncpy(char *dest, const char *src, unsigned int n);
@@ -51,6 +52,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char *s, int fd);
+char			*ft_strrev(char *str);
 
 /*
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));

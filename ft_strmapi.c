@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,29 +9,18 @@
 /*   Updated: 2021/11/17 11:32:15 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_atoi(const char *str)
-{
-	int i;
-	int n;
-	int result;
+#include "libft.h"
 
-	i = 0;
-	n = 1;
-	result = 0;
-	while (str[i] <= 32)
-		i++;
-	if (str[i] == '-')
-	{
-		n = -1;
-		i++;
-	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
-	{
-		result *= 10;
-		result += str[i] - '0';
-		i++;
-	}
-	return (result * n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char			*ret;
+	unsigned int	i;
+
+	ret = malloc(ft_strlen(s) * sizeof(char));
+	if (!ret)
+		return (NULL);
+	i = 0 ;
+	while (s[i])
+		ret[i] = f(i, *s);
+	return (ret);
 }

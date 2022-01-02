@@ -9,13 +9,12 @@
 /*   Updated: 2021/12/18 14:42:59 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t t)
 {
 	char	*substr;
-	int		size;
+	size_t	size;
 
 	size = ft_strlen(s);
 	if (t > size)

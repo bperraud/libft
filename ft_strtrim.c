@@ -21,7 +21,7 @@ int		ft_is_separator(const char c, const char *charset)
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-	size_t size;
+	size_t		size;
 	const char	*start;
 	const char	*end;
 	char		*dst;
@@ -38,7 +38,7 @@ char *ft_strtrim(char const *s1, char const *set)
 		return ("");
 	while (ft_is_separator(*end--, set))
 			size += 1;
-	dst = malloc((ft_strlen(s1) - size) * sizeof (char));
+	dst = malloc((ft_strlen(s1) - size + 1) * sizeof (char));
 	if (!dst)
 		return (NULL);
 	ft_strncpy(dst, start, ft_strlen(s1) - size);

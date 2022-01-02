@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,38 +9,33 @@
 /*   Updated: 2021/11/17 11:32:15 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stdio.h>
-
-int	ft_atoi(const char *str)
+char    *ft_strcat(char *dest, const char *src)
 {
-	int				i;
-	int				neg;
-	long long int	res;
+	char    *d;
 
-	i = 0;
-	neg = 1;
-	res = 0;
-	while (str[i] <= 32)
-		i++;
-	if (str[i] == '-')
-	{
-		neg *= -1;
-		i++;
-	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
-	{
-		res *= 10;
-		res += str[i] - '0';
-		//printf("res = %d\n", res);
-		if ((res > 2147483648 && neg) || (res > 2147483647 && !neg))
-		{
-			return (-1);
-		}
-		i++;
-	}
-	//printf("res = %d\n", res);
-	return (int)(res * neg);
+	d = dest;
+	while (*d != '\0')
+		d++;
+	while (*src != '\0')
+		*d++ = *src++;
+	*d = '\0';
+	return (dest);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char *str;
+	size_t lens1;
+	size_t lens2;
+
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
+	str = malloc((lens1 + lens2 + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	ft_strncpy(str, s1, lens1);
+	ft_strncpy(str + lens1, s2, ft_strlen(s2));
+	return (str);
 }

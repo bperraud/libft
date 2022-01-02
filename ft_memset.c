@@ -25,5 +25,5 @@ void	*ft_memset(void *s, int c, size_t n)
 /* using unsigned char for BYTE
  * if char is signed, then the behaviour will be implementation defined if the int cannot fit into the char
  * char still works in this case but will send a warning
- * unsigned char and char only differe when used as arithmetic operands
+ * unsigned char and char only differ when used as arithmetic operands
  */

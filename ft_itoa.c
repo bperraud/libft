@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int		nb_digit(int n)
+int	nb_digit(int n)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (n < 0)

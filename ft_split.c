@@ -3,74 +3,95 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
+/*   By: bperraud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 02:42:51 by bperraud          #+#    #+#             */
-/*   Updated: 2021/11/17 11:32:15 by bperraud         ###   ########.fr       */
+/*   Created: 2022/01/03 12:55:47 by bperraud          #+#    #+#             */
+/*   Updated: 2022/01/03 13:07:58 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int		ft_wordlen(const char *str, char c)
+int	ft_is_sep(char *c, char *charset)
 {
-	int i;
+	while (*charset)
+	{
+		if (*c == *charset)
+			return (1);
+		charset ++;
+	}
+	return (0);
+}
+
+int	ft_wordlen(char *str, char *charset)
+{
+	int	i;
 
 	i = 0;
-	while (str[i] && str[i] != c)
+	while (*str && !ft_is_sep(str, charset))
+	{
 		i++;
+		str++;
+	}
 	return (i);
 }
 
-int		ft_wordcount(const char *str, char c)
+int	ft_wordcount(char *str, char *charset)
 {
-	int i;
-	int w;
+	int	nbr_word;
 
-	w = 0;
+	nbr_word = 0;
 	while (*str)
 	{
-		while (*str && *str == c)
+		while (*str && ft_is_sep(str, charset))
 			str++;
-		i = ft_wordlen(str, c);
-		str += i;
-		if (i)
-			w++;
+		while (*str && !ft_is_sep(str, charset))
+			str++;
+		nbr_word++;
 	}
-	return (w);
+	if (ft_is_sep(str - 1, charset))
+		nbr_word--;
+	return (nbr_word);
 }
 
-char	*ft_wordcpy(const char *src, int n)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	char	*dest;
+	unsigned int	i;
 
-	if (!(dest = malloc((n + 1) * sizeof(char))))
-		return (NULL);
-	dest[n] = '\0';
-	while (n--)
-		dest[n] = src[n];
+	i = 0;
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }
 
-char	**ft_split(const char *str, char c)
+char	**ft_split(char *str, char *charset)
 {
-	char	**t;
-	int		size;
+	char	**dest;
+	int		nbr_word;
 	int		i;
-	int		n;
+	int		word_len;
 
-	size = ft_wordcount(str, c);
-	if (!(t = malloc((size + 1) * sizeof(char*))))
+	nbr_word = ft_wordcount(str, charset);
+	dest = malloc((nbr_word + 1) * sizeof(char *));
+	if (!dest)
 		return (NULL);
-	i = -1;
-	while (++i < size)
+	i = 0;
+	while (i < nbr_word)
 	{
-		while (*str && *str == c)
+		while (*str && ft_is_sep(str, charset))
 			str++;
-		n = ft_wordlen(str, c);
-		if (!(t[i] = ft_wordcpy(str, n)))
+		word_len = ft_wordlen(str, charset);
+		dest[i] = malloc((word_len + 1) * sizeof(char));
+		if (!(*dest))
 			return (NULL);
-		str += n;
+		ft_strncpy(dest[i], str, word_len);
+		str += word_len;
+		i++;
 	}
-	t[size] = 0;
-	return (t);
+	dest[nbr_word] = 0;
+	return (dest);
 }

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int		ft_is_separator(const char c, const char *charset)
+int	ft_is_separator(const char c, const char *charset)
 {
 	while (*charset)
 		if (c == *charset++)
@@ -19,7 +19,7 @@ int		ft_is_separator(const char c, const char *charset)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t		size;
 	const char	*start;

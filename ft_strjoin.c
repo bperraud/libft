@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+static char	*ft_strcat(char *dest, const char *src)
 {
 	char	*d;
 
@@ -21,6 +21,20 @@ char	*ft_strcat(char *dest, const char *src)
 	while (*src != '\0')
 		*d++ = *src++;
 	*d = '\0';
+	return (dest);
+}
+
+static char	*ft_strncpy(char *dest, const char *src, unsigned int n)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }
 

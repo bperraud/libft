@@ -9,52 +9,37 @@
 /*   Updated: 2022/01/03 13:07:58 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_is_sep(char *c, char *charset)
-{
-	while (*charset)
-	{
-		if (*c == *charset)
-			return (1);
-		charset ++;
-	}
-	return (0);
-}
-
-int	ft_wordlen(char *str, char *charset)
+static int	ft_wordlen(const char *str, char c)
 {
 	int	i;
 
 	i = 0;
-	while (*str && !ft_is_sep(str, charset))
-	{
+	while (str[i] && str[i] != c)
 		i++;
-		str++;
-	}
 	return (i);
 }
 
-int	ft_wordcount(char *str, char *charset)
+static int	ft_wordcount(const char *str, char c)
 {
 	int	nbr_word;
 
 	nbr_word = 0;
 	while (*str)
 	{
-		while (*str && ft_is_sep(str, charset))
+		while (*str && *str == c)
 			str++;
-		while (*str && !ft_is_sep(str, charset))
+		while (*str && *str != c)
 			str++;
 		nbr_word++;
 	}
-	if (ft_is_sep(str - 1, charset))
+	if (*(str - 1) == c)
 		nbr_word--;
 	return (nbr_word);
 }
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+static char	*ft_strncpy(char *dest, const char *src, unsigned int n)
 {
 	unsigned int	i;
 
@@ -68,28 +53,28 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char const *s, char c)
 {
 	char	**dest;
 	int		nbr_word;
 	int		i;
 	int		word_len;
 
-	nbr_word = ft_wordcount(str, charset);
+	nbr_word = ft_wordcount(s, c);
 	dest = malloc((nbr_word + 1) * sizeof(char *));
 	if (!dest)
 		return (NULL);
 	i = 0;
 	while (i < nbr_word)
 	{
-		while (*str && ft_is_sep(str, charset))
-			str++;
-		word_len = ft_wordlen(str, charset);
+		while (*s && *s == c)
+			s++;
+		word_len = ft_wordlen(s, c);
 		dest[i] = malloc((word_len + 1) * sizeof(char));
 		if (!(*dest))
 			return (NULL);
-		ft_strncpy(dest[i], str, word_len);
-		str += word_len;
+		ft_strncpy(dest[i], s, word_len);
+		s += word_len;
 		i++;
 	}
 	dest[nbr_word] = 0;

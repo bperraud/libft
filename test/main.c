@@ -9,7 +9,7 @@
 /*   Updated: 2021/12/01 20:30:06 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../libft.a"
+#include "../libft.h"
 #include <string.h>
 #include <stdio.h>
 

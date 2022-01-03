@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   main_strlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bperraud <bperraud@42.fr>                  +#+  +:+       +#+        */
+/*   By: lcalendi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 11:13:52 by bperraud          #+#    #+#             */
-/*   Updated: 2021/12/18 14:42:59 by bperraud         ###   ########.fr       */
+/*   Created: 2019/10/22 18:22:04 by lcalendi          #+#    #+#             */
+/*   Updated: 2019/11/01 17:35:32 by lcalendi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+#include <stdio.h>
+#include "../libft.h"
+#include <string.h>
+
+void main_strlen()
 {
-	const unsigned char	*cs;
-
-	cs = s;
-	while (n && *cs != c)
-	{
-		n--;
-		cs++;
-	}
-	if (n)
-		return ((void *)cs);
-	else
-		return (NULL);
+	//printf("ft_strlen->%zu\n", ft_strlen(NULL));
+	//printf("   strlen->%zu\n", strlen(NULL));
 }

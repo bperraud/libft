@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	uc;
-	unsigned char	*us;
+	unsigned char	*ub;
 
 	uc = c;
-	us = s;
-	while (n--)
-		*us++ = uc;
-	return (s);
+	ub = b;
+	while (len--)
+		*ub++ = uc;
+	return (b);
 }
 /* using unsigned char for BYTE
  * if char is signed, then the behaviour will be implementation defined if the int cannot fit into the char

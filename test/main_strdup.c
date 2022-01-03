@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   main_strdup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bperraud <bperraud@42.fr>                  +#+  +:+       +#+        */
+/*   By: lcalendi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 11:13:52 by bperraud          #+#    #+#             */
-/*   Updated: 2021/12/18 14:42:59 by bperraud         ###   ########.fr       */
+/*   Created: 2019/10/30 21:03:40 by lcalendi          #+#    #+#             */
+/*   Updated: 2019/11/07 16:41:49 by lcalendi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+#include "../libft.h"
+#include <string.h>
+#include <stdio.h>
+
+void	main_strdup()
 {
-	char		*cdest;
-	const char	*csrc;
-
-	cdest = dest;
-	csrc = src;
-	while (n-- && *csrc != c)
-		*cdest++ = *csrc++;
-	if (n)
-		return (++cdest);
-	else
-		return (NULL);
+	ft_strdup(NULL);
+	strdup(NULL);
+	ft_strdup("");
+	strdup("");
 }

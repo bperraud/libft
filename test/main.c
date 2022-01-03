@@ -24,7 +24,6 @@ int	main()
 	main_memchr();
 	printf("\nMemcmp\n");
 	main_memcmp();
-	/*
 	printf("\nMemcpy\n");
 	main_memcpy();
 	printf("\nMemmove\n");
@@ -47,5 +46,4 @@ int	main()
 	main_strnstr();
 	printf("\nStrrchr\n");
 	main_strrchr();
-	 */
 }

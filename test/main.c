@@ -18,14 +18,11 @@
 int	main()
 {
 	int fd = open("empty.txt", O_WRONLY);
-
 	ft_putnbr_fd(-2147483648, fd);
 
 	//ft_putstr_fd(fd, "");
 	printf("%s\n", ft_itoa(-2147483648));
 	//ft_itoa.c
-
-
 	printf("ft_itoa->%s\n", ft_itoa(125614));
 	printf("ft_itoa->%s\n", ft_itoa(-125614));
 	printf("ft_itoa->%s\n", ft_itoa(0));

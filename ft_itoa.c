@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	nb_char(int n)
+static int	ft_nbrchar(int n)
 {
 	int	i;
 
@@ -43,7 +43,7 @@ char	*ft_itoa(int n)
 	int		neg;
 
 	neg = 0;
-	size = nb_char(n);
+	size = ft_nbrchar(n);
 	str = malloc((size + 1) * sizeof(char));
 	if (!str)
 		return (NULL);

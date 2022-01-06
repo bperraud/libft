@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	nb_digit(int n)
+static int	nb_char(int n)
 {
 	int	i;
 
@@ -19,12 +19,19 @@ int	nb_digit(int n)
 	if (n < 0)
 	{
 		i++;
-		n *= -1;
+		while (n < -9)
+		{
+			n /= 10;
+			i++;
+		}
 	}
-	while (n > 9)
+	else
 	{
-		n /= 10;
-		i++;
+		while (n > 9)
+		{
+			n /= 10;
+			i++;
+		}
 	}
 	return (i);
 }
@@ -35,23 +42,23 @@ char	*ft_itoa(int n)
 	char	*str;
 	int		neg;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	neg = 0;
-	size = nb_digit(n);
+	size = nb_char(n);
 	str = malloc((size + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	str[size] = '\0';
 	if (n < 0)
 	{
-		n *= -1;
-		str[0] = '-';
 		neg = 1;
+		str[0] = '-';
 	}
 	while (size-- > neg)
 	{
-		str[size] = (n % 10) + '0';
+		if (neg)
+			str[size] = -(n % 10) + '0';
+		else
+			str[size] = (n % 10) + '0';
 		n /= 10;
 	}
 	return (str);

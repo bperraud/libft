@@ -11,7 +11,17 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+static int	ft_nbrdigit(int n)
+{
+	if (n < 10)
+		return (1);
+	return (1 + ft_nbrdigit(n / 10));
+}
+
 void	ft_putnbr_fd(int n, int fd)
 {
-	write(fd, &n, 1);
+	if (n >= 0)
+		write(fd, ft_itoa(n), ft_nbrdigit(n));
+	else
+		write(fd, ft_itoa(n), ft_nbrdigit(-n) + 1);
 }

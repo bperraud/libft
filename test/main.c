@@ -13,9 +13,34 @@
 #include "proto.h"
 #include "../libft.h"
 #include <stdio.h>
+#include <fcntl.h>
 
 int	main()
 {
+	int fd = open("empty.txt", O_WRONLY);
+
+	ft_putnbr_fd(-2147483648, fd);
+
+	//ft_putstr_fd(fd, "");
+	printf("%s\n", ft_itoa(-2147483648));
+	//ft_itoa.c
+
+
+	printf("ft_itoa->%s\n", ft_itoa(125614));
+	printf("ft_itoa->%s\n", ft_itoa(-125614));
+	printf("ft_itoa->%s\n", ft_itoa(0));
+	printf("ft_itoa->%s\n", ft_itoa(-2147483648));
+	//printf("	itoa->%s\n", itoa(100));
+
+	//ft_atoi.c
+	printf("ft_atoi->%d\n", ft_atoi("21474836489"));
+	printf("   atoi->%d\n", atoi("2147483648"));
+	//printf("ft_atoi->%d\n", ft_atoi("-2147483649"));
+	//printf("   atoi->%d\n", atoi("-2147483649"));
+
+
+	printf("\n Strncmp\n");
+	main_strncmp();
 	printf("\nAtoi\n");
 	main_atoi();
 	printf("\nBzero\n");
@@ -26,8 +51,8 @@ int	main()
 	main_memcmp();
 	printf("\nMemcpy\n");
 	main_memcpy();
-	printf("\nMemmove\n");
-	main_memmove();
+	//printf("\nMemmove\n");
+	//main_memmove();
 	printf("\nMemset\n");
 	main_memset();
 	printf("\nStrchr\n");
@@ -40,10 +65,10 @@ int	main()
 	main_strlcpy();
 	printf("\nStrlen\n");
 	main_strlen();
-	printf("\nStrncmp\n");
-	main_strncmp();
 	printf("\nStrnstr\n");
 	main_strnstr();
 	printf("\nStrrchr\n");
 	main_strrchr();
+
+
 }

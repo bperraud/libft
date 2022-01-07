@@ -1,14 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main_memchr.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lcalendi <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 18:09:15 by lcalendi          #+#    #+#             */
-/*   Updated: 2019/11/03 15:00:47 by lcalendi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
 
 #include "../libft.h"
 #include "stdio.h"
@@ -36,6 +26,9 @@ void main_memchr()
 	printf("   memchr->%s\n", memchr(NULL, 'p', 0));
 	printf("ft_memchr->%s\n", ft_memchr(NULL, '\0', 0));
 	printf("   memchr->%s\n", memchr(NULL, '\0', 0));
+
+
+
 	//ft_memchr(NULL, 'p', 1);
 	//memchr(NULL, 'p', 1);;
 	//ft_memchr(NULL, '\0', 1);

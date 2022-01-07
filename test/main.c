@@ -14,13 +14,16 @@
 #include "../libft.h"
 #include <stdio.h>
 #include <fcntl.h>
+#include <string.h>
 
 int	main()
 {
 	int fd = open("empty.txt", O_WRONLY);
 	ft_putnbr_fd(-2147483648, fd);
 
+	printf("strlen %lu\n", strlen("John\0ny"));
 	//ft_putstr_fd(fd, "");
+
 	printf("%s\n", ft_itoa(-2147483648));
 	//ft_itoa.c
 	printf("ft_itoa->%s\n", ft_itoa(125614));
@@ -34,6 +37,7 @@ int	main()
 	printf("   atoi->%d\n", atoi("2147483648"));
 	//printf("ft_atoi->%d\n", ft_atoi("-2147483649"));
 	//printf("   atoi->%d\n", atoi("-2147483649"));
+
 
 
 	printf("\n Strncmp\n");
@@ -65,7 +69,8 @@ int	main()
 	printf("\nStrnstr\n");
 	main_strnstr();
 	printf("\nStrrchr\n");
-	main_strrchr();
+	//main_strrchr();
 
-
+	printf("\nSubstr\n");
+	main_substr();
 }

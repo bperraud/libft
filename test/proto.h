@@ -28,5 +28,6 @@ void	main_strlen();
 void	main_strncmp();
 void	main_strnstr();
 void	main_strrchr();
+void	main_substr();
 
 #endif

@@ -1,14 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main_strrchr.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lcalendi <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/25 16:42:14 by lcalendi          #+#    #+#             */
-/*   Updated: 2019/11/03 15:28:20 by lcalendi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
 
 #include "../libft.h"
 #include <string.h>
@@ -38,6 +28,13 @@ void main_strrchr()
 	printf("   strrchr->%s\n", strrchr("                    ", ' '));
 	printf("ft_strrchr->%s\n", ft_strrchr("\0 Johnny", '\0'));
 	printf("   strrchr->%s\n", strrchr("\0 Johnny", '\0'));
+
+	char *src = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
+	char *d1 = strrchr(src, '\0');
+	char *d2 = ft_strrchr(src, '\0');
+	printf("ft_strrchr->%s\n", d1);
+	printf("   strrchr->%s\n", d2);
+
 	//printf("ft_strrchr->%s\n", ft_strrchr(str, 'j'));
 	//printf("   strrchr->%s\n", strrchr(str, 'j'));
 	free(str);

@@ -13,14 +13,34 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
+	const char *found;
+	const char *p;
+
+	c = (unsigned char) c;
+	/* when looking for \0 search for the first one (ajouter dans les tests)*/
+	if (c == '\0')
+		return ft_strchr(s, '\0');
+	found = NULL;
+	while ((p = ft_strchr(s, c)) != NULL)
+	{
+		found = p;
+		s = p + 1;
+	}
+	return (char *)found;
+}
+
+/*
+char	*ft_strrchr(const char *s, int c)
+{
 	size_t	i;
 
 	i = ft_strlen(s);
 	while (i)
 	{
 		if (s[i] == c)
-			return ((void *)s);
+			return ((char *)s);
 		i--;
 	}
 	return (NULL);
 }
+*/

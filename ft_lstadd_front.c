@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,17 +11,12 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void ft_lstadd_front(t_list **alst, t_list *new)
 {
-	char			*ret;
-	unsigned int	i;
+	t_list list;
 
-	ret = malloc((ft_strlen(s) + 1) * sizeof(char));
-	if (!ret)
-		return (NULL);
-	i = 0;
-	while (s[i])
-		ret[i] = f(i, s[i]);
-	ret[i] = '\0';
-	return (ret);
+	list = **alst;
+	while (!list.next)
+		list = *list.next;
+	list.next = new;
 }

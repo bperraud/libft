@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-
 static int	ft_nbrchar(int n)
 {
 	int	i;
@@ -37,26 +36,30 @@ static int	ft_nbrchar(int n)
 	return (i);
 }
 
-
 void	ft_putnbr_fd(int n, int fd)
 {
-	//write(fd, ft_itoa(n), ft_nbrchar(n));
-	int		size;
-	int		neg;
-	char c;
+	int	size;
+	int	neg;
+	int	i;
 
+	char str[sizeof (int) * 8];
 	neg = 0;
 	if (n < 0)
+	{
 		neg = 1;
+		str[0] = '-';
+	}
 	size = ft_nbrchar(n);
-	// while (size-- > neg)
-	while (size--)
+	str[size + 1] = '\0';
+	while (size-- > neg)
 	{
 		if (neg)
-			c = -(n % 10) + '0';
+			str[size] = -(n % 10) + '0';
 		else
-			c = (n % 10) + '0';
-		write(fd, &c, 1);
+			str[size] = (n % 10) + '0';
 		n /= 10;
 	}
+	i = 0;
+	while (str[i])
+		write(fd, &str[i++], 1);
 }

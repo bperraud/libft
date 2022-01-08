@@ -19,7 +19,11 @@
 int	main()
 {
 	int fd = open("empty.txt", O_WRONLY);
-	ft_putnbr_fd(-2147483648, fd);
+	//ft_putnbr_fd(-2147483648, fd);
+
+	write(fd, "1", 1);
+
+	//ft_putnbr_fd(2147488, fd);
 
 	printf("strlen %lu\n", strlen("John\0ny"));
 	//ft_putstr_fd(fd, "");

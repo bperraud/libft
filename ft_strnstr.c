@@ -29,10 +29,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 				i++;
 				temp--;
 			}
+			if (!temp)
+				return (0);
 			if (!little[i])
 				return ((char *) big);
-			else if (!temp)
-				return (0);
+		
 		}
 		big++;
 		len--;

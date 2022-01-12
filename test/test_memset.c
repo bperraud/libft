@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void main_memset()
+void test_memset()
 {
 	char dst1[1000] = {0};
 	char dst2[1000] = {0};

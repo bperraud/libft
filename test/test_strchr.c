@@ -3,7 +3,7 @@
 #include "../libft.h"
 #include <string.h>
 
-void main_strchr()
+void test_strchr()
 {
 	//ft_strchr(NULL, 'l');
 	//strchr(NULL, 'l');

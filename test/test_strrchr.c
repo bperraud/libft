@@ -1,11 +1,10 @@
 
-
 #include "../libft.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-void main_strrchr()
+void test_strrchr()
 {
 	char *str;
 	size_t loop = 0;

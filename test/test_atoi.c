@@ -2,7 +2,7 @@
 #include "../libft.h"
 #include <string.h>
 
-void main_atoi()
+void test_atoi()
 {
 	//ft_atoi(NULL);
 	//atoi(NULL);

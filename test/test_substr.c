@@ -2,7 +2,7 @@
 #include "stdio.h"
 #include "string.h"
 
-void main_substr(void)
+void test_substr(void)
 {
 
 	char *str = "i just want this part ###";

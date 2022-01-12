@@ -1,21 +1,21 @@
-SRCS			= main.c main_atoi.c main_bzero.c main_memchr.c main_memcmp.c \
-				  main_memcpy.c main_memmove.c main_memset.c main_strchr.c \
-				  main_strdup.c main_strlcat.c main_strlcpy.c main_strlen.c \
-				  main_strncmp.c main_strnstr.c	main_strrchr.c \
+SRC 			= main.c test_atoi.c test_bzero.c test_memchr.c test_memcmp.c \
+				  test_memcpy.c test_memmove.c test_memset.c test_strchr.c \
+				  test_strdup.c test_strlcat.c test_strlcpy.c test_strlen.c \
+				  test_strncmp.c test_strnstr.c	test_strrchr.c test_substr.c \
 
-OBJS			= $(SRCS:.c=.o)
+OBJ 			= $(SRC:.c=.o)
 
 CC 				= gcc
 
 NAME 			= test
 
-${NAME}: ${OBJS}
-		 		${CC}  -o ${NAME} ${OBJS} -L../ -lft
+${NAME}: ${OBJ}
+		 		${CC}  -o ${NAME} ${OBJ} -L../ -lft
 
 all: ${NAME}
 
 clean:
-			    rm -f ${OBJS}
+			    rm -f ${OBJ}
 
 fclean: clean
 			    rm -f ${NAME}

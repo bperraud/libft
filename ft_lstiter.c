@@ -13,6 +13,14 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void*))
 {
+	t_list	list;
+
+	list = *lst;
+	(f)(list.content);
+	while (list.next)
+	{
+		list = *list.next;
+		(f)(list.content);
+	}
 
 }
-

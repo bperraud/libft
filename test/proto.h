@@ -1,33 +1,23 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   proto.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lcalendi <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/01 17:26:00 by lcalendi          #+#    #+#             */
-/*   Updated: 2019/11/01 17:36:50 by lcalendi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #ifndef PROTO_H
 #define PROTO_H
 
-void	main_atoi();
-void	main_bzero();
-void	main_memchr();
-void	main_memcmp();
-void	main_memcpy();
-void	main_memmove();
-void	main_memset();
-void	main_strchr();
-void	main_strdup();
-void	main_strlcat();
-void	main_strlcpy();
-void	main_strlen();
-void	main_strncmp();
-void	main_strnstr();
-void	main_strrchr();
-void	main_substr();
+void	test_atoi();
+void	test_bzero();
+void	test_memchr();
+void	test_memcmp();
+void	test_memcpy();
+void	test_memmove();
+void	test_memset();
+void	test_strchr();
+void	test_strdup();
+void	test_strlcat();
+void	test_strlcpy();
+void	test_strlen();
+void	test_strncmp();
+void	test_strnstr();
+void	test_strrchr();
+void	test_substr();
+void 	test_lst();
 
 #endif

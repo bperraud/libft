@@ -13,10 +13,16 @@
 
 void ft_lstadd_front(t_list **alst, t_list *new)
 {
-	t_list list;
+	t_list	*list;
 
-	list = **alst;
-	while (!list.next)
-		list = *list.next;
-	list.next = new;
+	if (!*alst)
+	{
+		*alst = new;
+		return;
+	}
+	list = new;
+	while (list->next)
+		list = list->next;
+	list->next = *alst;
+	*alst = list;
 }

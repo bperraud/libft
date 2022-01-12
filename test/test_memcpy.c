@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void main_memcpy()
+void test_memcpy()
 {
 	char dst[50] = "Je ne suis";
 	char dst1[20] = {0};

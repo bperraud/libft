@@ -2,7 +2,7 @@
 #include "../libft.h"
 #include <string.h>
 
-void main_bzero()
+void test_bzero()
 {
 	char dst[1];
 	ft_bzero(NULL, 0);

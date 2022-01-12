@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void main_memmove()
+void test_memmove()
 {
 	char dst[50] = "Je ne suis";
 	char dst4[50] = "Je ne suis";

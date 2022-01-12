@@ -1,10 +1,9 @@
 
-
 #include "../libft.h"
 #include <string.h>
 #include <stdio.h>
 
-void	main_strdup()
+void	test_strdup()
 {
 	//ft_strdup(NULL);
 	//strdup(NULL);

@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 
-void main_strncmp()
+void test_strncmp()
 {
 	printf("ft_strncmp->%d\n", ft_strncmp("test", "tr", 10000));
 	printf("   strncmp->%d\n", strncmp("test", "tr", 10000));

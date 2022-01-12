@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdio.h>
 
-void main_strnstr()
+void test_strnstr()
 {
 	//printf("ft_strnstr->%s\n", ft_strnstr("trucbizarre", "lil", 80000));
 	//printf("   strnstr->%s\n", strnstr("trucbizarre", "lil", 80000));

@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 
-void main_strlcat()
+void test_strlcat()
 {
 	char dst1[10] = {0};
 	char dst2[10] = {0};

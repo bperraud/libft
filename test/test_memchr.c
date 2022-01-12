@@ -1,10 +1,9 @@
 
-
 #include "../libft.h"
 #include "stdio.h"
 #include "string.h"
 
-void main_memchr()
+void test_memchr()
 {
 	printf("ft_memchr->%s\n", ft_memchr("", 'p', 2));
 	//printf("   memchr->%s\n", memchr("", 'p', 2));

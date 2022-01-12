@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 
-void	main_memcmp()
+void	test_memcmp()
 {
 	printf("ft_memcmp->%d\n", ft_memcmp(NULL, NULL, 0));
 	printf("   memcmp->%d\n", memcmp(NULL, NULL, 0));

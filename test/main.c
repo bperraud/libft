@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lcalendi <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/01 17:19:17 by lcalendi          #+#    #+#             */
-/*   Updated: 2019/11/12 13:05:37 by jherelle         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "proto.h"
 #include "../libft.h"
 #include <stdio.h>
@@ -18,12 +6,8 @@
 
 int	main()
 {
-	int fd = open("empty.txt", O_WRONLY);
-	//ft_putnbr_fd(-2147483648, fd);
 
-	write(fd, "1", 1);
-
-	//ft_putnbr_fd(2147488, fd);
+	test_lst();
 
 	printf("strlen %lu\n", strlen("John\0ny"));
 	//ft_putstr_fd(fd, "");
@@ -45,36 +29,36 @@ int	main()
 
 
 	printf("\n Strncmp\n");
-	main_strncmp();
+	test_strncmp();
 	printf("\nAtoi\n");
-	main_atoi();
+	test_atoi();
 	printf("\nBzero\n");
-	main_bzero();
+	test_bzero();
 	printf("\nMemchr\n");
-	main_memchr();
+	test_memchr();
 	printf("\nMemcmp\n");
-	main_memcmp();
+	test_memcmp();
 	printf("\nMemcpy\n");
-	main_memcpy();
+	test_memcpy();
 	//printf("\nMemmove\n");
-	//main_memmove();
+	//test_memmove();
 	printf("\nMemset\n");
-	main_memset();
+	test_memset();
 	printf("\nStrchr\n");
-	main_strchr();
+	test_strchr();
 	printf("\nStrdup\n");
-	main_strdup();
+	test_strdup();
 	printf("\nStrlcat\n");
-	main_strlcat();
+	test_strlcat();
 	printf("\nStrlcpy\n");
-	main_strlcpy();
+	test_strlcpy();
 	printf("\nStrlen\n");
-	main_strlen();
+	test_strlen();
 	printf("\nStrnstr\n");
-	main_strnstr();
+	test_strnstr();
 	printf("\nStrrchr\n");
-	//main_strrchr();
+	//test_strrchr();
 
 	printf("\nSubstr\n");
-	main_substr();
+	test_substr();
 }

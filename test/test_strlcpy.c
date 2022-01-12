@@ -1,10 +1,9 @@
 
-
 #include "../libft.h"
 #include <string.h>
 #include <stdio.h>
 
-void main_strlcpy()
+void test_strlcpy()
 {	
 	char dst1[10];
 	char dst2[10];

@@ -13,13 +13,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	unsigned char uc;
+
+	uc = c;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == uc)
 			return ((void *)s);
 		s++;
 	}
-	if (*s == c)
+	if (*s == uc)
 		return ((void *)s);
 	else
 		return (NULL);

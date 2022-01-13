@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 02:42:51 by bperraud          #+#    #+#             */
-/*   Updated: 2021/11/17 11:32:15 by bperraud         ###   ########.fr       */
+/*   Created: 2022/01/13 19:23:49 by bperraud          #+#    #+#             */
+/*   Updated: 2022/01/13 19:23:58 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
@@ -21,7 +22,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	i = 0;
 	while (s[i])
+	{
 		ret[i] = f(i, s[i]);
+		i++;
+	}
 	ret[i] = '\0';
 	return (ret);
 }

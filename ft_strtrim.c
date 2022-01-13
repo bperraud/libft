@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bperraud <bperraud@42.fr>                  +#+  +:+       +#+        */
+/*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 11:13:52 by bperraud          #+#    #+#             */
-/*   Updated: 2021/12/18 14:42:59 by bperraud         ###   ########.fr       */
+/*   Created: 2022/01/12 22:22:32 by bperraud          #+#    #+#             */
+/*   Updated: 2022/01/13 19:19:12 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static char	*ft_strncpy(char *dest, const char *src, unsigned int n)
@@ -49,7 +50,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		size += 1;
 	}
 	if (ft_strlen(s1) - size == 0)
-		return ("");
+		return (ft_strdup(""));
 	while (ft_is_separator(*end--, set))
 			size += 1;
 	dst = malloc((ft_strlen(s1) - size + 1) * sizeof (char));

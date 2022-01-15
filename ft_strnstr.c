@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 02:42:51 by bperraud          #+#    #+#             */
-/*   Updated: 2021/11/17 11:32:15 by bperraud         ###   ########.fr       */
+/*   Created: 2022/01/15 20:36:01 by bperraud          #+#    #+#             */
+/*   Updated: 2022/01/15 20:36:03 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)

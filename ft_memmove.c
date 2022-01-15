@@ -3,19 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bperraud <bperraud@42.fr>                  +#+  +:+       +#+        */
+/*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 11:13:52 by bperraud          #+#    #+#             */
-/*   Updated: 2021/12/18 14:42:59 by bperraud         ###   ########.fr       */
+/*   Updated: 2022/01/15 17:03:43 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	void	*temp;
+  char        *d;
+  const char  *s;
+  char        *lasts;
+  char        *lastd;
 
-	temp = NULL;
-	ft_memcpy(temp, src, n);
-	return (ft_memcpy(dest, temp, n));
+  d = dst;
+  s = src;
+  if (d < s)
+  {
+    while (len--)
+		  *d++ = *s++;
+  }
+  else
+  {  
+	  lasts = (void*) s + (len - 1);
+	  lastd = d + (len - 1);
+      while (len--)
+    	  *lastd-- = *lasts--;
+  }
+  return (dst);
 }

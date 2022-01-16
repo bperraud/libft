@@ -6,7 +6,7 @@
 /*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 22:03:41 by bperraud          #+#    #+#             */
-/*   Updated: 2022/01/16 22:07:14 by bperraud         ###   ########.fr       */
+/*   Updated: 2022/01/16 23:07:07 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,25 @@ static char	*ft_strncpy(char *dest, const char *src, unsigned int n)
 	return (dest);
 }
 
-static void	free_word(char const *s)
+static void	*free_word(char **dest, int nbr_word)
 {
-	
+	while (nbr_word--)
+		free(dest[nbr_word]);	
+	free(dest);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**dest;
-	int		nbr_word;
-	int		i;
-	int		word_len;
+	char			**dest;
+	int	nbr_word;
+	int	i;
+	int	word_len;
 
 	nbr_word = ft_wordcount(s, c);
 	dest = malloc((nbr_word + 1) * sizeof(char *));
 	if (!dest)
-		return (NULL);
+		return (free_word(dest, 0));
 	i = 0;
 	while (i < nbr_word)
 	{
@@ -77,11 +80,8 @@ char	**ft_split(char const *s, char c)
 			s++;
 		word_len = ft_wordlen(s, c);
 		dest[i] = malloc((word_len + 1) * sizeof(char));
-		if (!(*dest))
-		{
-			free_word(s);
-			return (NULL);
-		}
+		if (!dest[i])
+			return (free_word(dest, 0));
 		ft_strncpy(dest[i], s, word_len);
 		s += word_len;
 		i++;

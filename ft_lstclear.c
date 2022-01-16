@@ -6,7 +6,7 @@
 /*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 20:34:35 by bperraud          #+#    #+#             */
-/*   Updated: 2022/01/16 01:23:26 by bperraud         ###   ########.fr       */
+/*   Updated: 2022/01/16 01:39:11 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = temp;
 	}
+	*lst = NULL;
 }

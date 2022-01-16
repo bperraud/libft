@@ -5,26 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 02:42:51 by bperraud          #+#    #+#             */
-/*   Updated: 2021/11/17 11:32:15 by bperraud         ###   ########.fr       */
+/*   Created: 2022/01/16 22:07:36 by bperraud          #+#    #+#             */
+/*   Updated: 2022/01/16 22:07:41 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-static char	*ft_strcat(char *dest, const char *src)
-{
-	char	*d;
-
-	d = dest;
-	while (*d != '\0')
-		d++;
-	while (*src != '\0')
-		*d++ = *src++;
-	*d = '\0';
-	return (dest);
-}
- */
 
 static char	*ft_strncpy(char *dest, const char *src, unsigned int n)
 {

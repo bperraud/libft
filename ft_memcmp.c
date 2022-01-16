@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bperraud <bperraud@42.fr>                  +#+  +:+       +#+        */
+/*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 11:13:52 by bperraud          #+#    #+#             */
-/*   Updated: 2021/12/18 14:42:59 by bperraud         ###   ########.fr       */
+/*   Created: 2022/01/16 22:06:13 by bperraud          #+#    #+#             */
+/*   Updated: 2022/01/16 22:06:16 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
@@ -18,8 +19,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	us1 = s1;
 	us2 = s2;
-	//if (!us1 || !us2)
-	//	return (0);
 	while (n && us1 && us2 && (*us1 == *us2))
 	{
 		us1++;

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bperraud <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 12:55:47 by bperraud          #+#    #+#             */
-/*   Updated: 2022/01/03 13:07:58 by bperraud         ###   ########.fr       */
+/*   Created: 2022/01/16 22:03:41 by bperraud          #+#    #+#             */
+/*   Updated: 2022/01/16 22:07:14 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_wordlen(const char *str, char c)
@@ -53,6 +54,11 @@ static char	*ft_strncpy(char *dest, const char *src, unsigned int n)
 	return (dest);
 }
 
+static void	free_word(char const *s)
+{
+	
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**dest;
@@ -72,7 +78,10 @@ char	**ft_split(char const *s, char c)
 		word_len = ft_wordlen(s, c);
 		dest[i] = malloc((word_len + 1) * sizeof(char));
 		if (!(*dest))
+		{
+			free_word(s);
 			return (NULL);
+		}
 		ft_strncpy(dest[i], s, word_len);
 		s += word_len;
 		i++;

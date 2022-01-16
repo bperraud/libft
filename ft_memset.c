@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bperraud <bperraud@42.fr>                  +#+  +:+       +#+        */
+/*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 11:13:52 by bperraud          #+#    #+#             */
-/*   Updated: 2021/12/18 14:42:59 by bperraud         ###   ########.fr       */
+/*   Created: 2022/01/16 22:06:31 by bperraud          #+#    #+#             */
+/*   Updated: 2022/01/16 22:06:50 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
@@ -22,8 +23,3 @@ void	*ft_memset(void *b, int c, size_t len)
 		*ub++ = uc;
 	return (b);
 }
-/* using unsigned char for BYTE
- * if char is signed, then the behaviour will be implementation defined if the int cannot fit into the char
- * char still works in this case but will send a warning
- * unsigned char and char only differ when used as arithmetic operands
- */

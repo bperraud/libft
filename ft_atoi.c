@@ -6,9 +6,10 @@
 /*   By: bperraud <bperraud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 02:42:51 by bperraud          #+#    #+#             */
-/*   Updated: 2021/11/17 11:32:15 by bperraud         ###   ########.fr       */
+/*   Updated: 2022/01/16 22:00:56 by bperraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_atoi(const char *str)

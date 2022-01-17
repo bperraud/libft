@@ -36,6 +36,7 @@ static int	ft_nbrchar(int n)
 	return (i);
 }
 
+
 void	ft_putnbr_fd(int n, int fd)
 {
 	int	size;

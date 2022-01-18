@@ -35,8 +35,7 @@ int	ft_atoi(const char *str)
 	{
 		if ((res * 10 > INT_MAX && neg) || (res * 10 - 1 > INT_MAX && !neg))
 			return (-1);
-		res *= 10;
-		res += str[i] - '0';
+		res = res * 10 + str[i] - '0';
 		i++;
 	}
 	return ((int)(res * neg));

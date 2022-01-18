@@ -21,16 +21,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	d = dst;
 	s = src;
-	if (d < s)
-	{
-		while (len--)
-			*d++ = *s++;
-	}
+	lasts = (void *) s + (len - 1);
+	lastd = d + (len - 1);
+	if (d <= s)
+		ft_memcpy(dst, src, len);
 	else
 	{
-		lasts = (void *) s + (len - 1);
-		lastd = d + (len - 1);
-		while (len--)
+		while (len-- > 0)
 			*lastd-- = *lasts--;
 	}
 	return (dst);

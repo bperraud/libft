@@ -50,7 +50,7 @@ void	ft_putnbr_fd(int n, int fd)
 		str[0] = '-';
 	}
 	size = ft_nbrchar(n);
-	str[size + 1] = '\0';
+	str[size] = '\0';
 	while (size-- > neg)
 	{
 		if (neg)

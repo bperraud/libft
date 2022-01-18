@@ -36,14 +36,13 @@ static int	ft_nbrchar(int n)
 	return (i);
 }
 
-
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	size;
-	int	neg;
-	int	i;
+	int		size;
+	int		neg;
+	int		i;
+	char	str[sizeof (int) * 8];
 
-	char str[sizeof (int) * 8];
 	neg = 0;
 	if (n < 0)
 	{

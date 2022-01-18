@@ -24,8 +24,8 @@ static int	ft_wordlen(const char *str, char c)
 
 static int	ft_wordcount(const char *str, char c)
 {
-	int i;
-	int nbr_word;
+	int	i;
+	int	nbr_word;
 
 	nbr_word = 0;
 	while (*str)
@@ -57,17 +57,17 @@ static char	*ft_strncpy(char *dest, const char *src, unsigned int n)
 static void	*free_word(char **dest, int nbr_word)
 {
 	while (nbr_word--)
-		free(dest[nbr_word]);	
+		free(dest[nbr_word]);
 	free(dest);
 	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char			**dest;
-	int	nbr_word;
-	int	i;
-	int	word_len;
+	char	**dest;
+	int		nbr_word;
+	int		i;
+	int		word_len;
 
 	nbr_word = ft_wordcount(s, c);
 	dest = malloc((nbr_word + 1) * sizeof(char *));

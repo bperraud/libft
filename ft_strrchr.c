@@ -21,10 +21,12 @@ char	*ft_strrchr(const char *s, int c)
 	if (c == '\0')
 		return (ft_strchr(s, '\0'));
 	found = NULL;
-	while ((p = ft_strchr(s, c)) != NULL)
+	p = ft_strchr(s, c);
+	while (p)
 	{
 		found = p;
 		s = p + 1;
+		p = ft_strchr(s, c);
 	}
 	return ((char *)found);
 }

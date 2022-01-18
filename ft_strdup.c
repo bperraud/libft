@@ -25,7 +25,7 @@ static char	*ft_strcpy(char *dest, const char *src)
 	return (dest);
 }
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup(const char *s1)
 {
 	char	*dest;
 

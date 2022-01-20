@@ -86,7 +86,6 @@ char	**ft_split(char const *s, char c)
 			return (free_word(dest, i + 1));
 		ft_strncpy(dest[i++], s, word_len);
 		s += word_len;
-		//i++;
 	}
 	dest[nbr_word] = NULL;
 	return (dest);

@@ -11,55 +11,18 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	ft_nbrchar(int n)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	int	i;
+	unsigned int	nbr;
 
-	i = 1;
-	if (n < 0)
+	if (nb < 0)
 	{
-		i++;
-		while (n < -9)
-		{
-			n /= 10;
-			i++;
-		}
+		ft_putchar_fd('-', fd);
+		nbr = (unsigned int)(nb * -1);
 	}
 	else
-	{
-		while (n > 9)
-		{
-			n /= 10;
-			i++;
-		}
-	}
-	return (i);
-}
-
-void	ft_putnbr_fd(int n, int fd)
-{
-	int		size;
-	int		neg;
-	int		i;
-	char	str[sizeof (int) * 8];
-
-	neg = 0;
-	if (n < 0)
-	{
-		neg = 1;
-		str[0] = '-';
-	}
-	size = ft_nbrchar(n);
-	str[size] = '\0';
-	while (size-- > neg)
-	{
-		if (neg)
-			str[size] = -(n % 10) + '0';
-		else
-			str[size] = (n % 10) + '0';
-		n /= 10;
-	}
-	i = 0;
-	while (str[i])
-		write(fd, &str[i++], 1);
+		nbr = (unsigned int)nb;
+	if (nbr >= 10)
+		ft_putnbr_fd(nbr / 10, fd);
+	ft_putchar_fd((char)(nbr % 10 + '0'), fd);
 }
